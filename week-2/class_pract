@@ -1,0 +1,6 @@
+range1 = range(5) #0, 1, 2, 3, 4
+range2 = range(1, 6) # 1, 2, 3, 4, 5
+range3 = range(1, 10, 2)
+range4 = range(10, 0, -1)
+
+print (type(range1))
