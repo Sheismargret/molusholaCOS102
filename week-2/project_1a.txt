@@ -1,0 +1,42 @@
+BEGIN StoreCheckout
+    DISPLAY "Welcome to the Store Checkout System"
+
+    INITIALIZE totalAmount = 0
+    INITIALIZE cartItems = []
+
+    WHILE userHasItemsToCheckout
+        DISPLAY "Enter item name:"
+        INPUT itemName
+
+        DISPLAY "Enter item price:"
+        INPUT itemPrice
+
+        ADD itemName and itemPrice to cartItems
+        totalAmount = totalAmount + itemPrice
+
+        DISPLAY "Do you have more items to add? (yes/no)"
+        INPUT userResponse
+        IF userResponse == "no"
+            BREAK
+        ENDIF
+    ENDWHILE
+
+    DISPLAY "Your cart items:"
+    FOR EACH item IN cartItems
+        DISPLAY item.name, item.price
+    ENDFOR
+
+    DISPLAY "Total Amount: ", totalAmount
+
+    DISPLAY "Enter payment amount:"
+    INPUT paymentAmount
+
+    IF paymentAmount >= totalAmount
+        change = paymentAmount - totalAmount
+        DISPLAY "Payment successful. Your change is: ", change
+    ELSE
+        DISPLAY "Insufficient payment. Please try again."
+    ENDIF
+
+    DISPLAY "Thank you for shopping with us!"
+END StoreCheckout

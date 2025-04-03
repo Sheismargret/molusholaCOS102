@@ -1,0 +1,13 @@
+def swap_ages(name1, age1, name2, age2):
+    # Swap the ages
+    age1, age2 = age2, age1
+    # Return the names with their new ages
+    return (name1, age1), (name2, age2)
+
+# Example usage
+person1 = ("Alice", 25)
+person2 = ("Bob", 30)
+
+swapped_person1, swapped_person2 = swap_ages(person1[0], person1[1], person2[0], person2[1])
+print(swapped_person1)  # Output: ('Alice', 30)
+print(swapped_person2)  # Output: ('Bob', 25)
